@@ -1,22 +1,41 @@
 <template>
   <div id="app">
-    test
+    <LoadingButton
+      style="color: red"
+      :loading="false"
+      @loadingClick="loadingClick"
+      @click="click"
+      >haha</LoadingButton
+    >
+    <el-button style="color: red">haha</el-button>
   </div>
 </template>
 
 <script>
-
+import LoadingButton from "./components/LoadingButton.js";
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    
-  }
-}
+    LoadingButton,
+  },
+  methods: {
+    click() {
+      console.log("click button");
+    },
+    loadingClick(isOver) {
+      console.log("loading click start");
+      setTimeout(() => {
+        isOver();
+        console.log("loading click end");
+      }, 2000);
+    },
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
