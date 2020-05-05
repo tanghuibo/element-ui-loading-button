@@ -1,22 +1,27 @@
 <template>
   <div id="app">
-    <LoadingButton
-      style="color: red"
-      :loading="false"
-      @loadingClick="loadingClick"
-      @click="click"
-      >haha</LoadingButton
-    >
-    <el-button style="color: red">haha</el-button>
+    <loading-button :loading="false" @loadingClick="loadingClick" @click="click">
+      loading-button
+    </loading-button>
+
+    <loading-button-jsx :loading="false" @loadingClick="loadingClick" @click="click">
+      loading-button-jsx
+    </loading-button-jsx>
+
+    <el-button @click="click">
+      el-button
+    </el-button>
   </div>
 </template>
 
 <script>
 import LoadingButton from "./components/LoadingButton.js";
+import LoadingButtonJsx from "./components/LoadingButtonJsx.js";
 export default {
   name: "app",
   components: {
     LoadingButton,
+    LoadingButtonJsx,
   },
   methods: {
     click() {
