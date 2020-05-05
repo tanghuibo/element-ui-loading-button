@@ -26,5 +26,5 @@ export default {
         {this.$slots.default}
       </el-button>
     );
-  },
+  }
 };

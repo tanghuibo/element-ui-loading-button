@@ -27,10 +27,10 @@ export default {
     click() {
       console.log("click button");
     },
-    loadingClick(isOver) {
+    loadingClick(finishLoading) {
       console.log("loading click start");
       setTimeout(() => {
-        isOver();
+        finishLoading();
         console.log("loading click end");
       }, 2000);
     },
